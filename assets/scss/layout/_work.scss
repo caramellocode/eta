@@ -1,0 +1,445 @@
+@use '../utils' as *;
+
+/*=============================
+        13. Work
+===============================*/
+.work {
+    &__area {
+        background: var(--tg-color-gray-2);
+        padding: 195px 0 260px;
+        position: relative;
+        z-index: 1;
+        @media #{$lg} {
+            padding: 170px 0 200px;
+        }
+        @media #{$md} {
+            padding: 140px 0 150px;
+        }
+        @media #{$xs} {
+            padding: 100px 0;
+        }
+        &-two {
+            background: var(--tg-theme-secondary);
+        }
+    }
+    &__inner-wrap {
+        margin: 0 30px;
+        background: var(--tg-theme-secondary);
+        @media #{$xl} {
+            margin: 0 20px;
+        }
+        @media #{$xs} {
+            margin: 0 10px;
+        }
+    }
+    &__item {
+        text-align: center;
+        margin-bottom: 30px;
+        position: relative;
+        padding-right: 85px;
+        @media #{$xl} {
+            padding-right: 70px;
+        }
+        @media #{$lg} {
+            padding-right: 0;
+        }
+        &-wrap {
+            & .row {
+                & [class*="col-"] {
+                    &:nth-child(odd) {
+                        margin-top: 90px;
+                        @media #{$md} {
+                            margin-top: 0;
+                        }
+                    }
+                    &:nth-child(even) {
+                        & .work__arrow {
+                            transform: rotate(22deg);
+                            top: 100px;
+                        }
+                    }
+                    &:last-child {
+                        & .work__arrow {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+        &:hover {
+            & .work__icon {
+                transform: translateY(5px);
+            }
+        }
+        &-two {
+            margin-bottom: 25px;
+        }
+    }
+    &__thumb {
+        & img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            @media #{$xs} {
+                height: 280px;
+            }
+        }
+    }
+    &__content {
+        text-align: center;
+        & .title {
+            margin-bottom: 45px;
+            font-size: 72px;
+            line-height: 1.1;
+            @media #{$xl} {
+                font-size: 68px;
+            }
+            @media #{$lg} {
+                font-size: 55px;
+                margin-bottom: 30px;
+            }
+            @media #{$xs} {
+                font-size: 46px;
+                margin-bottom: 20px;
+            }
+            @media #{$sm} {
+                font-size: 50px;
+                margin-bottom: 25px;
+            }
+        }
+        &-two {
+            & .title {
+                font-size: 24px;
+                color: var(--tg-color-white-default);
+                margin-bottom: 10px;
+                font-weight: 600;
+            }
+            & p {
+                margin-bottom: 15px;
+            }
+            & .link-btn {
+                display: inline-flex;
+                align-items: center;
+                font-size: 16px;
+                font-weight: 600;
+                text-transform: uppercase;
+                gap: 5px;
+                & i {
+                    font-size: 14px;
+                }
+                &:hover {
+                    gap: 8px;
+                }
+            }
+        }
+        &-wrap {
+            @include flexbox();
+            background: var(--tg-theme-secondary);
+            position: relative;
+        }
+        &-three {
+            background: var(--tg-theme-secondary);
+            padding: 25px 30px;
+            position: relative;
+            position: absolute;
+            left: 100px;
+            bottom: 0;
+            right: 0;
+            z-index: 2;
+            overflow: hidden;
+            @media #{$lg} {
+                padding: 25px 20px;
+                left: 80px;
+            }
+            @media #{$sm} {
+                padding: 25px 25px;
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%) rotate(135deg);
+                width: 170px;
+                height: 1030px;
+                z-index: -2;
+                opacity: 0.55;
+                background: linear-gradient(180deg, #262626 8.61%, rgba(18, 18, 18, 0.00) 100%);
+            }
+            & span {
+                display: block;
+                text-transform: uppercase;
+                color: var(--tg-theme-primary);
+                letter-spacing: 0.65px;
+                font-size: 13px;
+                font-weight: 500;
+                line-height: 1;
+                margin-bottom: 10px;
+            }
+            & .title {
+                margin-bottom: 10px;
+                font-size: 24px;
+                font-weight: 500;
+                color: var(--tg-color-white-default);
+                @media #{$lg} {
+                    font-size: 22px;
+                }
+            }
+            & p {
+                margin-bottom: 0;
+            }
+        }
+    }
+    &__btn {
+        @include flexbox();
+        align-content: center;
+        gap: 30px;
+        justify-content: center;
+        flex-wrap: wrap;
+        @media #{$xs} {
+            gap: 20px;
+        }
+    }
+    &__icon {
+        width: 150px;
+        height: 150px;
+        @include flexbox();
+        align-items: center;
+        justify-content: center;
+        background: var(--tg-color-white-default);
+        @include border-radius(50%);
+        font-size: 60px;
+        color: var(--tg-theme-primary);
+        line-height: 0;
+        position: relative;
+        margin: 0 auto 30px;
+        @include transition(.3s);
+        @media #{$lg} {
+            width: 130px;
+            height: 130px;
+        }
+        & span {
+            width: 40px;
+            height: 40px;
+            background: var(--tg-theme-primary);
+            @include flexbox();
+            align-items: center;
+            justify-content: center;
+            color: var(--tg-color-white-default);
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1;
+            @include border-radius(50%);
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        &-two {
+            width: 100px;
+            height: 100px;
+            @include flexbox();
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 auto;
+            background: var(--tg-color-white-default);
+            line-height: 0;
+            color: var(--tg-theme-primary);
+            font-size: 55px;
+            @media #{$lg} {
+                width: 80px;
+                height: 80px;
+                font-size: 45px;
+            }
+        }
+    }
+    &__arrow {
+        position: absolute;
+        right: -30px;
+        top: 22px;
+        transform: rotate(-22deg);
+        color: var(--tg-color-white-default);
+        @media #{$xl} {
+            right: -40px;
+        }
+        @media #{$lg} {
+            right: -55px;
+        }
+        @media #{$md} {
+            display: none;
+        }
+        & svg {
+            @media #{$lg} {
+                width: 80px;
+            }
+        }
+    }
+    &__wrapper {
+        position: relative;
+    }
+    &__img-wrap {
+        @media #{$xs} {
+            display: none;
+        }
+        & .list-wrap {
+            & li {
+                position: absolute;
+                z-index: -1;
+                & img {
+                    @include border-radius(50%);
+                    object-fit: cover;
+                }
+                &:nth-child(1) {
+                    left: 10%;
+                    top: -2%;
+                    @media #{$lg} {
+                        left: 5%;
+                        top: -56%;
+                    }
+                    @media #{$md} {
+                        display: none;
+                    }
+                    &::before {
+                        content: "";
+                        width: 184px;
+                        height: 184px;
+                        position: absolute;
+                        right: -10px;
+                        bottom: -10px;
+                        z-index: -1;
+                        border: 1px solid var(--tg-border-1);
+                        @include border-radius(50%);
+                    }
+                    & img {
+                        width: 150px;
+                        height: 150px;
+                    }
+                }
+                &:nth-child(2) {
+                    left: -2%;
+                    bottom: 4%;
+                    @media #{$xl} {
+                        left: 0;
+                    }
+                    @media #{$md} {
+                        bottom: auto;
+                        top: -63%;
+                    }
+                    &::before {
+                        content: "";
+                        width: 130px;
+                        height: 130px;
+                        position: absolute;
+                        right: -7px;
+                        bottom: -7px;
+                        z-index: -1;
+                        border: 1px solid var(--tg-border-1);
+                        @include border-radius(50%);
+                        @media #{$md} {
+                            width: 100px;
+                            height: 100px;
+                        }
+                    }
+                    & img {
+                        width: 100px;
+                        height: 100px;
+                        @media #{$md} {
+                            width: 80px;
+                            height: 80px;
+                        }
+                    }
+                }
+                &:nth-child(3) {
+                    left: 210px;
+                    bottom: -140px;
+                    @media #{$lg} {
+                        left: 110px;
+                    }
+                    @media #{$md} {
+                        left: 30px;
+                        bottom: -90px;
+                    }
+                    & img {
+                        width: 80px;
+                        height: 80px;
+                    }
+                }
+                &:nth-child(4) {
+                    right: 10%;
+                    top: -2%;
+                    @media #{$lg} {
+                        right: 5%;
+                        top: -56%;
+                    }
+                    @media #{$md} {
+                        display: none;
+                    }
+                    &::before {
+                        content: "";
+                        width: 184px;
+                        height: 184px;
+                        position: absolute;
+                        left: -10px;
+                        bottom: -10px;
+                        z-index: -1;
+                        border: 1px solid var(--tg-border-1);
+                        @include border-radius(50%);
+                    }
+                    & img {
+                        width: 150px;
+                        height: 150px;
+                    }
+                }
+                &:nth-child(5) {
+                    right: -2%;
+                    bottom: 4%;
+                    @media #{$xl} {
+                        right: 0;
+                    }
+                    @media #{$md} {
+                        bottom: auto;
+                        top: -63%;
+                    }
+                    &::before {
+                        content: "";
+                        width: 130px;
+                        height: 130px;
+                        position: absolute;
+                        left: -7px;
+                        bottom: -7px;
+                        z-index: -1;
+                        border: 1px solid var(--tg-border-1);
+                        @include border-radius(50%);
+                        @media #{$md} {
+                            width: 100px;
+                            height: 100px;
+                        }
+                    }
+                    & img {
+                        width: 100px;
+                        height: 100px;
+                        @media #{$md} {
+                            width: 80px;
+                            height: 80px;
+                        }
+                    }
+                }
+                &:nth-child(6) {
+                    right: 210px;
+                    bottom: -140px;
+                    @media #{$lg} {
+                        right: 110px;
+                    }
+                    @media #{$md} {
+                        right: 30px;
+                        bottom: -90px;
+                    }
+                    & img {
+                        width: 80px;
+                        height: 80px;
+                    }
+                }
+            }
+        }
+    }
+}
+

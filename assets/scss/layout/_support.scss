@@ -1,0 +1,29 @@
+@use '../utils' as *;
+
+/*=============================
+        20. Support
+===============================*/
+.support {
+    &__img {
+        width: 100%;
+        @media #{$md} {
+            margin-bottom: 50px;
+        }
+    }
+    &__content {
+        margin-right: 55px;
+        @media #{$lg} {
+            margin-right: 0;
+        }
+        & p {
+            margin-bottom: 30px;
+        }
+        & .btn {
+            &:hover {
+                background: var(--tg-theme-secondary);
+                border-color: var(--tg-theme-secondary);
+            }
+        }
+    }
+}
+

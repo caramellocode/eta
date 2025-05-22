@@ -1,0 +1,64 @@
+@use '../utils' as *;
+
+/*=============================
+        14. Video
+===============================*/
+.video {
+    &__area {
+        background: var(--tg-color-gray-2);
+        padding: 390px 0 120px;
+        margin-top: -390px;
+        @media #{$xs} {
+            padding: 370px 0 100px;
+        }
+    }
+    &__img {
+        position: relative;
+        & img {
+            @include border-radius(0 80px);
+            min-height: 650px;
+            width: 100%;
+            object-fit: cover;
+            @media #{$lg} {
+                min-height: 500px;
+            }
+            @media #{$md} {
+                min-height: 400px;
+            }
+            @media #{$xs} {
+                min-height: 350px;
+                @include border-radius(0 50px);
+            }
+        }
+        & .play-btn {
+            width: 130px;
+            height: 130px;
+            @include flexbox();
+            align-items: center;
+            justify-content: center;
+            border-radius: 130px;
+            border: 1px solid var(--tg-color-white-default);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(8px);
+            font-size: 24px;
+            line-height: 0;
+            color: var(--tg-color-white-default);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            @media #{$lg} {
+                width: 120px;
+                height: 120px;
+            }
+            @media #{$xs} {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    }
+}
+
+.mfp-iframe-holder .mfp-content {
+    max-width: 1250px;
+}

@@ -1,0 +1,369 @@
+@use '../utils' as *;
+
+/*=============================
+        03. Slider
+===============================*/
+.slider {
+    &__bg {
+        background-size: cover;
+        background-position: center;
+        min-height: 800px;
+        padding: 20px 0;
+        @include flexbox();
+        align-items: flex-end;
+        @media #{$xl} {
+            min-height: 600px;
+        }
+        &-two {
+            background-size: cover;
+            background-position: center;
+            min-height: 900px;
+            @include flexbox();
+            align-items: center;
+            padding: 120px 0;
+            position: relative;
+            z-index: 1;
+            @media #{$xl} {
+                min-height: 620px;
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.35);
+                z-index: -1;
+            }
+        }
+        &-three {
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            border-bottom: 60px solid var(--tg-theme-primary);
+            min-height: 850px;
+            @include flexbox();
+            align-items: center;
+            @media #{$xl} {
+                min-height: 700px;
+            }
+            @media #{$lg} {
+                min-height: 640px;
+                border-bottom: 50px solid var(--tg-theme-primary);
+            }
+            @media #{$lg} {
+                border-bottom: 30px solid var(--tg-theme-primary);
+            }
+        }
+    }
+    &__content {
+        background: var(--tg-color-dark-2);
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        padding: 95px 80px 100px;
+        width: 100%;
+        @media #{$xl} {
+            padding: 75px 80px 80px;
+        }
+        @media #{$lg} {
+            padding: 45px 50px 50px;
+        }
+        @media #{$md} {
+            text-align: center;
+        }
+        @media #{$xs} {
+            padding: 35px 25px 40px;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 180px;
+            height: 965px;
+            opacity: 0.55;
+            background: linear-gradient(180deg, #262626 8.61%, rgba(18, 18, 18, 0.00) 100%);
+            transform: translateY(-50%) rotate(135deg);
+            z-index: -1;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            left: 22%;
+            top: 50%;
+            width: 180px;
+            height: 965px;
+            opacity: 0.55;
+            background: linear-gradient(180deg, #2E2E2E 0%, rgba(18, 18, 18, 0.00) 67.1%);
+            transform: translateY(-50%) rotate(135deg);
+            z-index: -1;
+        }
+        & .sub-title {
+            font-size: 18px;
+            font-weight: 500;
+            text-transform: uppercase;
+            color: var(--tg-color-white-default);
+            display: inline-block;
+            line-height: 1;
+            position: relative;
+            padding-right: 75px;
+            margin-bottom: 22px;
+            @media #{$xs} {
+                margin-bottom: 15px;
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 62px;
+                height: 2px;
+                background: var(--tg-color-white-default);
+            }
+        }
+        & .title {
+            margin-bottom: 48px;
+            color: var(--tg-color-white-default);
+            font-size: 60px;
+            text-transform: uppercase;
+            line-height: 1.15;
+            @media #{$xl} {
+                font-size: 48px;
+                margin-bottom: 40px;
+            }
+            @media #{$lg} {
+                font-size: 45px;
+                margin-bottom: 30px;
+            }
+            @media #{$xs} {
+                font-size: 40px;
+            }
+            @media #{$sm} {
+                font-size: 42px;
+            }
+        }
+        & .btn {
+            border-color: var(--tg-color-white-default);
+            &:hover {
+                border-color: var(--tg-theme-primary);
+            }
+        }
+        &-two {
+            margin-left: 80px;
+            @media #{$lg} {
+                margin-left: 0;
+            }
+            @media #{$md} {
+                text-align: center;
+            }
+            & .sub-title {
+                display: block;
+                font-size: 20px;
+                font-weight: 600;
+                color: var(--tg-color-white-default);
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                line-height: 1.2;
+                margin-bottom: 28px;
+                @media #{$xs} {
+                    font-size: 18px;
+                    margin-bottom: 12px;
+                }
+            }
+            & .title {
+                margin-bottom: 70px;
+                color: var(--tg-color-white-default);
+                text-transform: uppercase;
+                font-size: 90px;
+                line-height: 1.1;
+                @media #{$xl} {
+                    font-size: 75px;
+                    margin-bottom: 50px;
+                }
+                @media #{$lg} {
+                    font-size: 65px;
+                    margin-bottom: 40px;
+                }
+                @media #{$md} {
+                    font-size: 60px;
+                    margin-bottom: 35px;
+                }
+                @media #{$xs} {
+                    font-size: 48px;
+                    margin-bottom: 30px;
+                }
+            }
+        }
+        &-three {
+            border: 1px solid rgba(255, 255, 255, 1);
+            background: rgba(255, 255, 255, 0.80);
+            padding: 100px 100px;
+            margin-right: 65px;
+            @media #{$xl} {
+                margin-right: 0;
+                padding: 80px 80px;
+            }
+            @media #{$lg} {
+                padding: 60px 50px;
+            }
+            @media #{$md} {
+                padding: 50px 50px;
+                text-align: center;
+            }
+            @media #{$xs} {
+                padding: 40px 30px;
+            }
+            & .sub-title {
+                display: block;
+                letter-spacing: 1.6px;
+                text-transform: uppercase;
+                line-height: 1;
+                font-weight: 600;
+                color: var(--tg-theme-primary);
+                margin-bottom: 15px;
+            }
+            & .title {
+                margin-bottom: 35px;
+                font-size: 48px;
+                line-height: 1.2;
+                @media #{$lg} {
+                    font-size: 42px;
+                }
+                @media #{$md} {
+                    margin-bottom: 30px;
+                }
+                @media #{$xs} {
+                    font-size: 36px;
+                }
+                @media #{$sm} {
+                    font-size: 38px;
+                }
+            }
+        }
+    }
+    &__btn {
+        @include flexbox();
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        @media #{$md} {
+            justify-content: center;
+        }
+    }
+    &__shape {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-position: center;
+        background-size: cover;
+    }
+    &-active-two {
+        position: relative;
+    }
+    &__nav {
+        @include flexbox;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+        @media #{$md} {
+            top: auto;
+            transform: translateY(0);
+            bottom: 0;
+        }
+        & button {
+            width: 65px;
+            height: 65px;
+            @include flexbox();
+            align-items: center;
+            justify-content: center;
+            border: none;
+            color: var(--tg-color-white-default);
+            background: var(--tg-theme-secondary);
+            padding: 0;
+            @media #{$md} {
+                width: 50px;
+                height: 50px;
+            }
+            & svg {
+                width: 30px;
+                height: 30px;
+                @media #{$md} {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+            &:hover {
+                background: var(--tg-theme-primary);
+            }
+            &.slider-button-next {
+                background: var(--tg-theme-primary);
+                margin-top: 65px;
+                @media #{$md} {
+                    margin-top: 50px;
+                }
+                &:hover {
+                    background: var(--tg-theme-secondary);
+                }
+            }
+        }
+    }
+}
+
+.slider__bg-three,
+.slider__bg-two,
+.slider__bg {
+    &.swiper-slide-active {
+        & .slider__content-three,
+        & .slider__content-two,
+        & .slider__content {
+            & .sub-title {
+                -webkit-animation-delay: .3s;
+                animation-delay: .3s;
+                -webkit-animation-duration: .8s;
+                animation-duration: .8s;
+                -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+                -webkit-animation-name: fadeInUp2;
+                animation-name: fadeInUp2;
+            }
+            & .title {
+                -webkit-animation-delay: .6s;
+                animation-delay: .6s;
+                -webkit-animation-duration: .8s;
+                animation-duration: .8s;
+                -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+                -webkit-animation-name: fadeInUp2;
+                animation-name: fadeInUp2;
+            }
+            & .btn {
+                -webkit-animation-delay: .9s;
+                animation-delay: .9s;
+                -webkit-animation-duration: .8s;
+                animation-duration: .8s;
+                -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+                -webkit-animation-name: fadeInUp2;
+                animation-name: fadeInUp2;
+            }
+        }
+        & .slider__shape {
+            -webkit-animation-delay: .2s;
+            animation-delay: .2s;
+            -webkit-animation-duration: .6s;
+            animation-duration: .6s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+            -webkit-animation-name: fadeRight2;
+            animation-name: fadeRight2;
+        }
+    }
+}
